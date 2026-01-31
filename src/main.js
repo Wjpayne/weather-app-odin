@@ -1,1 +1,6 @@
-console.log('Hello, World!');
+import apiRequest from './modules/apiRequest.js';
+
+apiRequest('New York');
+
+
+
