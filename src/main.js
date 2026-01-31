@@ -1,6 +1,11 @@
-import apiRequest from './modules/apiRequest.js';
+import displayInfo from './modules/displayInfo.js'; 
+const city = 'Nashville, TN';
 
-apiRequest('New York');
+displayInfo(city);
+
+
+
+
 
 
 
