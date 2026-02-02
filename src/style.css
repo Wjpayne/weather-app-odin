@@ -1,3 +1,73 @@
+/* General Styles */
+body {
+  font-family: Arial, sans-serif;
+  background-color: #0f172a;
+  color: #f1f5f9;
+  margin: 0;
+  padding: 1rem;
+}
+
+
+
+/* Style for form */
+
+form {
+  margin: 2rem auto;
+  text-align: center;
+}
+
+input[type="text"] {
+  padding: 0.5rem;
+  font-size: 1rem;
+  border: 2px solid #1e293b;
+  border-radius: 10px;
+  width: 250px;
+}
+
+button {
+  padding: 0.5rem 1rem;
+  font-size: 1rem;
+  background-color: #1e293b;
+  color: white;
+  border: none;
+  border-radius: 10px;
+  cursor: pointer;
+  margin-left: 1rem;
+}
+
+ul {
+  list-style-type: none;
+  padding: 0;
+}
+
+
+
+/* Current Weather Styles */
+
+#current-weather {
+  background: #334155;
+  color: white;
+  padding: 1.5rem;
+  border-radius: 10px;
+  text-align: center;
+  margin-top: 1rem;
+}
+
+#current-weather h2 {
+  margin-bottom: 0.5rem;
+}   
+
+#current-weather-content li {
+    margin: 0.75rem 0;
+}
+
+/* Forecast Cards Styles */
+
+.forecast-section h2 {
+  text-align: center;
+  margin-top: 2rem;
+}
+
 .forecast-cards {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(140px, 1fr));
@@ -26,4 +96,10 @@
 .forecast-card .conditions {
   font-size: 0.85rem;
   opacity: 0.9;
+}
+
+.weather-icon {
+  width: 48px;
+  height: 48px;
+  margin: 0.5rem auto;
 }
