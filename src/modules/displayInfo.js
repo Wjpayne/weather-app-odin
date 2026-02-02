@@ -1,33 +1,46 @@
 import apiRequest from "./apiRequest";
 
-
 const displayInfo = async (city) => {
-
-  try {
   const data = await apiRequest(city);
 
-  const cityElement = document.getElementById("location");
-  cityElement.textContent = `${data.resolvedAddress}`;
+  // ---------- CURRENT WEATHER ----------
+  document.getElementById("location").textContent = data.resolvedAddress;
 
-  const dateElement = document.getElementById("date");
-  dateElement.textContent = `${data.days[0].datetime}`;
+  document.getElementById("date").textContent = data.days[0].datetime;
 
-  const hiLowElement = document.getElementById("hi-low");
-  hiLowElement.textContent = `High: ${data.days[0].tempmax}°F  Low: ${data.days[0].tempmin}°F`;
+  document.getElementById("hi-low").textContent =
+    `High: ${data.days[0].tempmax}°F  Low: ${data.days[0].tempmin}°F`;
 
-  const tempElement = document.getElementById("temperature");
-  tempElement.textContent = `Current Temperature: ${data.currentConditions.temp}°F`;
+  document.getElementById("temperature").textContent =
+    `Current Temperature: ${data.currentConditions.temp}°F`;
 
-  const conditionsElement = document.getElementById("conditions");
-  conditionsElement.textContent = `Conditions: ${data.currentConditions.conditions}`;
+  document.getElementById("conditions").textContent =
+    `Conditions: ${data.currentConditions.conditions}`;
 
-  } catch (error) {
-    console.error("Error fetching or displaying data:", error);
-    alert("Could not fetch weather data. Please try again.");
-  }
+  // ---------- DAILY FORECAST ----------
+  const forecastContainer = document.getElementById("forecast-cards");
+  forecastContainer.innerHTML = ""; // clear previous search
 
-  
+  data.days.slice(1, 8).forEach((day) => {
+    const card = document.createElement("div");
+    card.classList.add("forecast-card");
 
+    const date = document.createElement("h3");
+    date.textContent = new Date(day.datetime).toLocaleDateString("en-US", {
+      weekday: "short",
+    });
+
+    const temps = document.createElement("p");
+    temps.classList.add("temp");
+    temps.textContent = `${day.tempmax}° / ${day.tempmin}°`;
+
+    const conditions = document.createElement("p");
+    conditions.classList.add("conditions");
+    conditions.textContent = day.conditions;
+
+    card.append(date, temps, conditions);
+    forecastContainer.appendChild(card);
+  });
 };
 
 export default displayInfo;

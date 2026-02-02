@@ -1,5 +1,5 @@
 import displayInfo from "./modules/displayInfo.js";
-
+import "./style.css"
 const form = document.getElementById("user-form");
 const cityInput = document.getElementById("city-input");
 

@@ -1,0 +1,29 @@
+.forecast-cards {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(140px, 1fr));
+  gap: 1rem;
+  margin-top: 1rem;
+}
+
+.forecast-card {
+  background: #1e293b;
+  color: white;
+  padding: 1rem;
+  border-radius: 10px;
+  text-align: center;
+}
+
+.forecast-card h3 {
+  margin-bottom: 0.5rem;
+  font-size: 1rem;
+}
+
+.forecast-card .temp {
+  font-weight: bold;
+  margin: 0.25rem 0;
+}
+
+.forecast-card .conditions {
+  font-size: 0.85rem;
+  opacity: 0.9;
+}
