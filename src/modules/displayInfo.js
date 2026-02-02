@@ -42,7 +42,7 @@ const displayInfo = async (city) => {
   document.getElementById("conditions").textContent =
     `Conditions: ${data.currentConditions.conditions}`;
 
-  // ---------- DAILY FORECAST ----------
+  // --------- DAILY FORECAST ----------
   const forecastContainer = document.getElementById("forecast-cards");
   forecastContainer.innerHTML = ""; // clear previous search
 
