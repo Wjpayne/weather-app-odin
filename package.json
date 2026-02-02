@@ -1,6 +1,7 @@
 {
-  "homepage": "https://Wjpayne.github.io/weather-app-odin/",
+  
   "name": "weather-app-odin",
+  "homepage": "https://Wjpayne.github.io/weather-app-odin/",
   "private": true,
   "version": "0.0.0",
   "type": "module",
